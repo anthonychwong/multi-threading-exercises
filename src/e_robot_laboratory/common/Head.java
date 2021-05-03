@@ -1,4 +1,4 @@
-package d_robot_factory.common;
+package e_robot_laboratory.common;
 
 public class Head {
   public String description;

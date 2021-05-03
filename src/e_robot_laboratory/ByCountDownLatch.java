@@ -1,8 +1,8 @@
-package d_robot_factory;
+package e_robot_laboratory;
 
-import d_robot_factory.common.Body;
-import d_robot_factory.common.Head;
-import d_robot_factory.common.Robot;
+import e_robot_laboratory.common.Body;
+import e_robot_laboratory.common.Head;
+import e_robot_laboratory.common.Robot;
 
 import java.util.concurrent.CountDownLatch;
 

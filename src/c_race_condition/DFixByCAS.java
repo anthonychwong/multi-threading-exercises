@@ -1,13 +1,10 @@
 package c_race_condition;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class C2RaceConditionBySynchronizedBlock {
-  private static int value = 0;
-  private static Object objLock = new Object();
+public class DFixByCAS {
+  private static AtomicInteger value = new AtomicInteger(0);
 
   public static void main(String[] args){
     int parallelism = 4;
@@ -21,7 +18,7 @@ public class C2RaceConditionBySynchronizedBlock {
 
     try {
       if(executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS)){
-        System.out.println("final value: " + String.valueOf(value));
+        System.out.println("final value: " + String.valueOf(value.get()));
       } else {
         throw new TimeoutException();
       }
@@ -39,9 +36,7 @@ public class C2RaceConditionBySynchronizedBlock {
 
     @Override
     public void run() {
-      synchronized (objLock){
-        System.out.println(String.valueOf(_id) + ": new value is " + String.valueOf(++value));
-      }
+      System.out.println(String.valueOf(_id) + ": new value is " + String.valueOf(value.incrementAndGet()));
     }
   }
 }

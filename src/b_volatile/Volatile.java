@@ -1,8 +1,8 @@
-package b_bolatile;
+package b_volatile;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class BVolatile {
+public class Volatile {
   static volatile int value = 0;
 
   public static void main(String[] args) throws Throwable{

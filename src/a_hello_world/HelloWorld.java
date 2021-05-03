@@ -1,6 +1,6 @@
 package a_hello_world;
 
-public class AHelloWorld {
+public class HelloWorld {
   public static void main(String[] args) throws Throwable{
     ExtendByThread extendByThread = new ExtendByThread();
 

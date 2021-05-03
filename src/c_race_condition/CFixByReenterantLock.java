@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class C3RaceConditionByReEnterantLock {
+public class CFixByReenterantLock {
   private static int value = 0;
   private static ReentrantLock objLock = new ReentrantLock();
 
