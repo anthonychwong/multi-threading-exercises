@@ -32,6 +32,26 @@ You can also lock the increment code with `ReentrantLock`. Additionally, it can 
 
 For increment (and also decrement) operations, such as id generation, compare and swap (CAS) is more desirable since it is an atomic operation and don't require lock. In Java,  `Atomic*` objects provide CAS operations.
 
+## Deadlock (`d_deadlock`)
+
+Deadlock is a state that threads waiting for lock that is acquired by others, causing the process to wait indefinitely.
+
+### Problem(`AProblem`)
+
+Create deadlock by making a thread to lock on object `a` and wait for object `b` while other thread is doing the reverse.
+
+![Visual VM detected a deadlock](docs/d-deadlock-visualvm-detection-1.png)
+
+![The end of the thread dump shows the details about the deadlock](docs/d-deadlock-visualvm-detection-2.png)
+
+### Fix with reentrant lock (`BFixWithReentrantLock`)
+
+`ReentrantLock` provides method to lock and give up if timeout is provided. This allows process to wait for at most certain amount of time to avoid deadlock.
+
+### Fix with queue (`CFixWithQueue`)
+
+All requests to given resource queues up and processed one be one. Single threaded executor guarantees all submitted tasks are executed sequentially by an unbounded queue.
+
 ## Robot Laboratory (`e_robot_laboratory`)
 
 In this laboratory, workers work on their own part, namely head and body, to produce single robot.
