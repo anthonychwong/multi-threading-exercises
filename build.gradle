@@ -7,3 +7,6 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation group: 'com.lmax', name: 'disruptor', version: '3.4.4'
+}

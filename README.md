@@ -64,6 +64,14 @@ With count down latch, a thread can wait for multiple threads to signal before c
 
 Workers are modeled into `Callable` for making head and body. Then they're submit to an executor service. Products by workers are obtained via `get()` on `Future` object returned during submission.
 
+## Burger Production Line (`f_burger_production`)
+
+In this production line, many burgers are created by different workers producing meat and bun.
+
+### By Disruptor
+
+[Disruptor from LMAX](https://github.com/LMAX-Exchange/disruptor) is used for producing 100 burgers, meat worker and bun worker put meat and bun into the burger (Event) separately.
+
 # Attribution
 
 This project mainly inspired by https://github.com/alagesh/MultiThreading. I code according the README.md and rearrange some usecases.
