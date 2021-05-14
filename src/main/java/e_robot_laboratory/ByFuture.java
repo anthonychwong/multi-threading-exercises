@@ -1,8 +1,8 @@
 package e_robot_laboratory;
 
-import e_robot_laboratory.common.Body;
-import e_robot_laboratory.common.Head;
-import e_robot_laboratory.common.Robot;
+import support.robot.Body;
+import support.robot.Head;
+import support.robot.Robot;
 
 import java.util.concurrent.*;
 

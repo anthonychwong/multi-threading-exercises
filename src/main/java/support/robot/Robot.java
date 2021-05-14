@@ -1,4 +1,4 @@
-package e_robot_laboratory.common;
+package support.robot;
 
 public class Robot {
   public Head head;

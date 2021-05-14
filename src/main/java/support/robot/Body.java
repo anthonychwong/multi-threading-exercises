@@ -1,4 +1,4 @@
-package e_robot_laboratory.common;
+package support.robot;
 
 public class Body {
   public String description;
