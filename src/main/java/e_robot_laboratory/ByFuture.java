@@ -19,7 +19,7 @@ public class ByFuture {
       Robot product = new Robot();
       product.head = makeHead.get();
       product.body = makeBody.get();
-      product.printContent();
+      product.printContent(System.out);
     }
   }
 

@@ -34,7 +34,7 @@ public class ByCountDownLatch {
     Robot product = new Robot();
     product.head = head;
     product.body = body;
-    product.printContent();
+    product.printContent(System.out);
   }
 
 }
